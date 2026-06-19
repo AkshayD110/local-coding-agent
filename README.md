@@ -7,7 +7,7 @@ Inspired by [Vicki Boykis — Running local models is good now](https://vickiboy
 
 ```
 ┌─────────────────────────────────────────────┐
-│  Host (Apple Silicon Mac)                    │
+│  Host (Apple Silicon Mac — M4 Max, 128GB RAM)│
 │                                              │
 │  Ollama (:11434)                             │
 │    └── gemma4:12b  (~7.6GB, Q4_K_M)         │
@@ -52,7 +52,7 @@ ollama serve &
 
 ## Model Performance
 
-Performance varies by hardware. On Apple Silicon with 32GB+ RAM:
+Performance varies by hardware. Tested on an Apple Silicon M4 Max with 128GB RAM:
 
 | Metric | Approximate |
 |--------|-------------|

@@ -1,0 +1,30 @@
+services:
+  pi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pi-agent:0.79.6
+    init: true
+    stdin_open: true
+    tty: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      # Unset cloud API keys so Pi cannot fall back to cloud providers
+      OPENAI_API_KEY: ""
+      ANTHROPIC_API_KEY: ""
+      GEMINI_API_KEY: ""
+      OPENAI_API_BASE: "http://host.docker.internal:11434/v1"
+    volumes:
+      # Ship models.json into pi's config dir
+      - ./models.json:/home/piuser/.pi/agent/models.json:ro
+      # Mount the target workspace (set via WORKSPACE env var)
+      - ${WORKSPACE:-.}:/workspace
+      # Persist pi sessions across runs
+      - pi-sessions:/home/piuser/.pi/agent/sessions
+    working_dir: /workspace
+    # Security: no network except host.docker.internal for Ollama
+    # No privileged mode, no extra capabilities
+
+volumes:
+  pi-sessions:

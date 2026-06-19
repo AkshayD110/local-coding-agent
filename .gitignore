@@ -1,0 +1,53 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.*.un~
+
+# Node
+node_modules/
+
+# Docker
+docker-compose.override.yml
+
+# Pi agent sessions (local state)
+.pi/
+
+# Environment files
+.env
+.env.*
+.env.local
+
+# Logs
+*.log
+
+# Temp / backup files
+*.tmp
+*.bak
+
+# Guide (internal reference only)
+GUIDE.md
+
+# AI / assistant artifacts
+CLAUDE.md
+CLAUDE_INSTRUCTIONS.md
+.claude/
+.cursor/
+.copilot/
+.aider*
+.continue/
+ai-*.md
+*-ai.md
+*_ai.md
+PROMPT*.md
+CONVERSATION*.md
